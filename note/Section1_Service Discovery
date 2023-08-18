@@ -1,0 +1,13 @@
+섹션1. Service Discovery
+
+◆ Service Discovery
+- 외부의 서비스들이 micro service를 검색하기 위해 사용되는 개념
+- key와 value 같은 데이터들이 저장되어 있고 key를 통해 검색
+
+이걸 Netflix Eureka 로 구현할 것임
+
+◆ 동작 구조
+1. 각각의 서비스들의 위치 정보를 Eureka 서버에 등록
+2. 등록된 서비스들을 사용하려는 클라이언트는 자신이 필요한 요청 정보를 load balancer 또는 API gateway에 전송
+3. 요청 정보가 service discovery에 전달됨
+4. service discovery는 요청된 서비스의 위치 정보를 반환함
