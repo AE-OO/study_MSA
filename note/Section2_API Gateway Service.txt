@@ -11,3 +11,10 @@
 ◆ Zuul
 - gateway 역할을 해 줌
 - client 는 zuul 에게 요청을 하고 zuul은 서비스에게 요청을 전달함
+
+◆ Spring Cloud Gateway - Filter
+- client가 gateway에 요청을 전달하면 uri에 따라 gateway는 first service로 갈지 second service로 갈지를 결정함
+
+◆ Spring Cloud Gateway 구성 및 동작 순서
+Gateway Handler Mapping ------------------ Predicate ------------------------- Pre Filter ------Service----- Post Filter ------- Gateway Handler Mapping ---- Client
+   요청 정보가 들어옴                   그 요청이 어떤 것인지 판단함          어떤 작업이 일어나기 전 사전 필터         작업이 끝난 후 필터
