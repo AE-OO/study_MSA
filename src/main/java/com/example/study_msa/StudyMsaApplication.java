@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
-@EnableEurekaServer // 서버의 자격으로 등록
+@EnableEurekaServer // 서버의 자격으로 등록함
 public class StudyMsaApplication {
 
     public static void main(String[] args) {
