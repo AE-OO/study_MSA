@@ -1,0 +1,13 @@
+섹션2. API Gateway Service
+
+◆ API Gateway Ssrvice 역할
+- 사용자가 설정한 라우팅 설정에 따라서 각각의 엔드포인트로 client 대신 요청을 전달하고 응답을 다시 client에게 전달하는 proxy 역할을 함
+- 시스템의 내부 구조는 숨기고 외부의 요청을 적절히 가공해서 사용할 수 있다는 장점
+
+◆ Ribbon
+- client side 내부에 있는 load balancer => 비동기화 처리가 잘 되지 않는다는 문제로 잘 사용되지 않음
+- ip와 포트번호 없이 서비스 이름만으로 호출 가능
+
+◆ Zuul
+- gateway 역할을 해 줌
+- client 는 zuul 에게 요청을 하고 zuul은 서비스에게 요청을 전달함
