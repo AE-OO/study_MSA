@@ -11,3 +11,12 @@
 2. 등록된 서비스들을 사용하려는 클라이언트는 자신이 필요한 요청 정보를 load balancer 또는 API gateway에 전송
 3. 요청 정보가 service discovery에 전달됨
 4. service discovery는 요청된 서비스의 위치 정보를 반환함
+
+◆ 여러 서비스를 등록시키는 방법
+1. 인텔리제이 상단의 Edit Configurations... 사용
+   - Edit Configurations... 에서 application 등록
+   - VM Option에 -Dserver.port=**** 로 포트 번호 지정
+2. 인텔리제이 하단의 Terminal 사용
+   - 메이븐을 설치한 후 mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=****' 입력
+3. cmd 사용
+   - 인텔리제이 terminal 과 같은 명령어 사용
