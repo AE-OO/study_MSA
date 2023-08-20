@@ -20,3 +20,10 @@
    - 메이븐을 설치한 후 mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=****' 입력
 3. cmd 사용
    - 인텔리제이 terminal 과 같은 명령어 사용
+
+=> 위의 방법은 포트를 매번 지정해줘야해서 번거로움
+따라서, applicaton.yml 파일에 port 번호를 0으로 지정하고 랜덤한 포트번호로 서비스를 등록시킴
+
+Eureka Server를 실행시켜보면 서비스를 '서비스이름:포트번호'로 표시하는데 포트번호를 0으로 지정해두면 서비스를 여러개 구동시켰지만
+하나의 서비스가 올라간 것처럼 보임
+따라서, application.yml 파일에 instance-id를 지정해 어떤 형식으로 서비스를 표시할 것인지 작성해 줌
