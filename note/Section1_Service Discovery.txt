@@ -16,10 +16,11 @@
 1. 인텔리제이 상단의 Edit Configurations... 사용
    - Edit Configurations... 에서 application 등록
    - VM Option에 -Dserver.port=**** 로 포트 번호 지정
-2. 인텔리제이 하단의 Terminal 사용
-   - 메이븐을 설치한 후 mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=****' 입력
-3. cmd 사용
-   - 인텔리제이 terminal 과 같은 명령어 사용
+2. 인텔리제이 하단의 Terminal 또는 cmd 사용
+   방법1. 메이븐을 설치한 후 mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=****' 입력
+
+   방법2-1. mvn clean compile package (메이븐 빌드)
+   방법2-2. java -jar -Dserver.port=**** ./target/user-service-0.0.1-SNAPSHOT.jar 입력
 
 => 위의 방법은 포트를 매번 지정해줘야해서 번거로움
 따라서, applicaton.yml 파일에 port 번호를 0으로 지정하고 랜덤한 포트번호로 서비스를 등록시킴
