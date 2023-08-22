@@ -1,0 +1,9 @@
+섹션4. Users Microservice 1
+
+◆ 구성
+client ------- API gateway ------- eureka server ------- user service
+
+◆ user service의 세부구성
+- front end 는 사용하지 않음
+- business logic : spring boot, spring cloud 사용
+- database : JPA, h2 사용
