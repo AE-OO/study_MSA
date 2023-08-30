@@ -4,3 +4,10 @@
 - 서버와 클라이언트 구성에 필요한 설정 정보를 외부 시스템에서 관리
 - 하나의 중앙화 된 저장소에서 설정 정보를 전부 관리하고 그렇기 떄문에 각 서비스를 재빌드하지 않고 바로 적용 가능함
 - DEV-UAT-PROD 환경에 맞는 구성 정보를 사용할 수 있음
+
+◆ Spring Boot Actuator
+- application의 상태 등을 모니터링 할 수 있는 작업
+- application을 따로 기동하지 않더라도 프로젝트에 actuator에 관한 dependency가 있으면 Metric 수집을 위한 Http End Point를 제공함
+  - refresh : micro service에 있는 configuration server에서 가져와야 할 값을 refresh함
+  - beans : micro service에 등록되어 있는 bean 정보를 출력함
+  - health: micro service의 상태를 출려함
