@@ -1,0 +1,16 @@
+섹션 9. 설정 정보의 암호화 처리
+
+◆ 암호화를 처리하는 방식
+encryption : 평문을 암호화하는 것
+decryption : 암호문을 다시 평문으로 바꾸는 것
+
+- 대칭키(Symmetric Encryption) : 암호화 할 때의 키와 복호화 할 때의 키가 같음
+- 비대칭 암호화 방식 (Asymmetric Encryption) : 암호화 할 떄의 키와 복호화 할 때의 키가 다름
+
+키 값 생성 => java keytool 사용
+
+◆ Spring Cloud Config Server에서 encryption 데이터를 사용하는 flow
+config 정보 파일의 데이터를 알 수 없는 타입의 데이터로 변경해서 git repository나 file storage에 저장해 둠
+-> 암호화 된 데이터를 config server에서 읽어옴
+-> config server에서 복호화 작업을 한 데이터를 microservice에 전달함
+-> 복호화 된 데이터를 microservice에서 사용함
