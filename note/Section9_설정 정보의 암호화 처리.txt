@@ -14,3 +14,18 @@ config 정보 파일의 데이터를 알 수 없는 타입의 데이터로 변�
 -> 암호화 된 데이터를 config server에서 읽어옴
 -> config server에서 복호화 작업을 한 데이터를 microservice에 전달함
 -> 복호화 된 데이터를 microservice에서 사용함
+
+◆ jks파일 생성
+- private 키 생성
+> keytool -genkeypair -alias apiEncryptionKey -keyalg RSA -dname "CN={사용자명}, OU=API Development, O=joneconsulting.co.kr,
+L=Seoul, C=KR" -keypass "{비밀번호}" -keystore {파일명} -storepass "{비밀번호}"
+
+- 생성된 키파일 확인
+> keytool -list -keysotre apiEncryptionKey.jks -v
+* -v 옵션은 더 자세한 정보를 제공받길 원할 때 사용
+
+- 인증서버
+> keytool -export -alias apiEncryptionKey -keystore apiEncryptionKey.jks -rfc -file trustServer.cer
+
+- public 키 생성
+> keytool -import -alias trustServer -file trustServer.cer -keystore publicKey.jks
