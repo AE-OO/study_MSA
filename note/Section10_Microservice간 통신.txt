@@ -11,3 +11,11 @@
 - Feign Web Service Client
     => rest 방식을 사용하기 위해서 추상화 된 인터페이스를 제공하기 위한 spring cloud netflix의 라이브러리
 
+◆ 데이터 동기화
+- order service를 여러 개 띄운다고 가정 했을 때, 한 사용자가 port 1번에서 2개의 상품을 주문하고 port 2번에서 3개의 상품을 주문하는 경우가 발생할 수 있음
+그렇기 때문에 두 서버에 대해서 DB를 동기화 시켜줘야 함
+
+=> 이 때 사용 되는 것이 Message Queuing Server (Apache Kafka, Rabbit MQ 등)
+
+Message Queuing Server는 order service와 DB 사이에 존재하고
+한 서버에서 데이터가 추가되었다는 신호를 보내면 큐잉 서버에서 다른 서버에 신호를 보내서 DB가 동기화 될 수 있도록 함
